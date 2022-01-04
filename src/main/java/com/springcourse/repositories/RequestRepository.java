@@ -14,6 +14,6 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
     List<Request> findAllByOwnerId(Long id);
 
     // esse método será chamado quando for adicionar um novo estágio de um pedido
-    @Query(value = "UPDATE Request SET state = ?2 WHERE id = ?1", nativeQuery = true)
+    @Query(value = "UPDATE request SET state = ?2 WHERE id = ?1", nativeQuery = true)
     Request updateStatus(Long id, RequestState state);
 }
